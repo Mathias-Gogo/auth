@@ -1,0 +1,181 @@
+// Variables
+$primary-color: #3a86ff;
+$dark-color: #2b2d42;
+$light-color: #f8f9fa;
+$border-color: #e9ecef;
+$error-color: #ff5a5f;
+$google-red: #db4437;
+$apple-black: #000000;
+$shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin button-styles {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    @include flex-center;
+    gap: 12px;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow;
+    }
+
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+// Container Styles
+.container {
+    @include flex-center;
+    min-height: 100vh;
+    background-color: $light-color;
+    padding: 2rem;
+
+    form {
+        width: 100%;
+        max-width: 420px;
+        background: white;
+        padding: 2.5rem;
+        border-radius: 16px;
+        box-shadow: $shadow;
+    }
+}
+
+// Logo Styles
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    img {
+        height: 48px;
+        width: auto;
+    }
+}
+
+// Form Inputs
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    input {
+        padding: 14px 16px;
+        border: 1px solid $border-color;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1.2rem;
+        transition: border 0.3s ease;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+            box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+        }
+
+        &::placeholder {
+            color: lighten($dark-color, 40%);
+        }
+    }
+}
+
+// Submit Button
+.submit-btn {
+    @include button-styles;
+    background-color: $primary-color;
+    color: white;
+    width: 100%;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+// Alternative Options
+.alternative-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    .remember-me {
+        @include flex-center;
+        gap: 8px;
+
+        input[type="checkbox"] {
+            accent-color: $primary-color;
+        }
+    }
+
+    a {
+        color: $primary-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+// Social Login Buttons
+.other-signin {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    button {
+        @include button-styles;
+        width: 100%;
+        background-color: white;
+        font-weight: 600;
+        font-size: 1.2rem;
+        border: 1px solid $border-color;
+    }
+
+    .google-btn {
+        color: $google-red;
+
+        svg {
+            color: $google-red;
+        }
+    }
+
+    .apple-btn {
+        color: $apple-black;
+
+        svg {
+            color: $apple-black;
+        }
+    }
+}
+
+// Responsive Adjustments
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+
+        form {
+            padding: 1.5rem;
+        }
+    }
+
+    .other-signin {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,112 @@
+.forgot-password-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 2rem;
+}
+.forgot-password-container .forgot-password-form {
+  width: 100%;
+  max-width: 420px;
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.forgot-password-container .forgot-password-form h2 {
+  color: #2b2d42;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.forgot-password-container .forgot-password-form .instructions {
+  color: #535780;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.logo img {
+  height: 48px;
+  width: auto;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.form-input input {
+  padding: 14px 16px;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  transition: border 0.3s ease;
+}
+.form-input input:focus {
+  outline: none;
+  border-color: #3a86ff;
+  box-shadow: 0 0 0 2px rgba(58, 134, 255, 0.2);
+}
+.form-input input::-moz-placeholder {
+  color: #888bb1;
+}
+.form-input input::placeholder {
+  color: #888bb1;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #3a86ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.submit-btn:hover {
+  background-color: #0767ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.back-to-login {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+.back-to-login a {
+  color: #3a86ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.back-to-login a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .forgot-password-container {
+    padding: 1rem;
+  }
+  .forgot-password-container .forgot-password-form {
+    padding: 1.5rem;
+  }
+}/*# sourceMappingURL=forgot.css.map */
